@@ -40,8 +40,8 @@ object stats {
 	}
 
   // returns 1 if in the confidence interval or 0 if not
-  def in_ci(ci : Tuple2[Double, Double], m : Double) : Int = {
-    if( m >= ci._1 & m <= ci._2) {1}
+  def in_ci(lambda : Double)(ci : Tuple2[Double, Double]) : Int = {
+    if( lambda >= ci._1 & lambda <= ci._2) {1}
     else {0}
   }
 

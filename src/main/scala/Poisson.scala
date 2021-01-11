@@ -32,10 +32,10 @@ case class Poisson(private val lambda : Double) {
     def cdf(x : Int) : Double = {
         if(x >= 0) {
             // create the list of array of integers from 0 to max_p
-            val ps          = for(i <- 0 to x) yield i
+            val ps          = List.range(0,x+1)
 
             // find lambda^(ps[i]) / (ps[i] !) for each i
-            val mapped_ps   = ps map(prob) toList
+            val mapped_ps   = ps map(prob)
 
             getSum(mapped_ps)(x)
         }
@@ -51,10 +51,10 @@ case class Poisson(private val lambda : Double) {
         val max_p      = 30
 
         // create the list of array of integers from 0 to max_p
-        val ps          = for(i <- 0 to max_p) yield i
+        val ps          = List.range(0,max_p+1)
 
         // find lambda^(ps[i]) / (ps[i] !) for each i
-        val mapped_ps   = ps map(prob) toList
+        val mapped_ps   = ps map(prob)
 
         // curry the function to have the array fixed
         val curried_sum = getSum(mapped_ps) _

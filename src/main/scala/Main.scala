@@ -24,8 +24,16 @@ object main extends App {
 	println(s"Using ${p} for sampling...")
 	List(100,1000,10000,100000).foreach(x =>printInfo(p,x))
 
-  val n_cis = 1000
-  val n_samples = 1000
+  // simulate n_cis confidence intervals to see how many times
+  // the confidences intervals capture the true lambda
+  val n_cis = 20000
+  val n_samples = 100
+  val lambda_in_ci = in_ci(lambda) _
+
+  val samples = List.fill(n_cis)(n_samples).map(p.sample)
+  val percent = 100 * samples.map(get_ci).map(lambda_in_ci).sum.toDouble/ n_cis.toDouble
+
+  println(s"95% confidence interval captures ${lambda} ${percent}% of the time.")
 
 
 }

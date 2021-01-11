@@ -26,4 +26,4 @@ Or
 
 	sbt package
 
-	scala target/scala-2.12/PoissonDist.12-1.0.jar
+	scala target/scala-2.12/poissondist.12-1.0.jar

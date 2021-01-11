@@ -5,7 +5,7 @@ class TestPoisson extends AnyFunSuite {
 
 	test("Test Constructor") {
 		val p = new Poisson(3.2)
-		assert(p.getLambda() == 3.2)
+		assert(p.getLambda == 3.2)
 	}
 
 	test("Test Poisson.prob") {
