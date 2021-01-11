@@ -1,5 +1,4 @@
-
-[![Build Status](https://travis-ci.com/mdh266/PoissonDistributionInScala.svg?branch=main)](https://travis-ci.com/mdh266/PoissonDistributionInScala)
+[![Build Status](https://travis-ci.com/mdh266/PoissonDistributionInScala.svg?branch=master)](https://travis-ci.com/mdh266/PoissonDistributionInScala)
 
 # Poisson Distribution In Scala
 ----------------
