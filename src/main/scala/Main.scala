@@ -35,5 +35,4 @@ object main extends App {
 
   println(s"95% confidence interval captures ${lambda} ${percent}% of the time.")
 
-
 }
